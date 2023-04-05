@@ -91,7 +91,6 @@ const Navbar = () => {
             <img src = {require('./../assets/room-1' + '.jpg')} alt='icon is not available' className='h-70 w-80 pl-4' />
             <img src = {require('./../assets/room-2' + '.jpg')} alt='icon is not available' className='h-70 w-80' />
             <img src = {require('./../assets/room-3' + '.webp')} alt='icon is not available' className='h-70 w-80' />
-            
         </div>
         <div className="absolute pl-72 inset-0 flex items-center justify-between p-4">
                 <button
@@ -154,7 +153,7 @@ const Navbar = () => {
                     
             ))}
           </div> 
-          <div className='flex flex-row gap-48 pt-8 pl-4 border-b border-gray-400 p-2'>
+          <div className='flex flex-row gap-40 pt-8 pl-4 border-b border-gray-400 p-2'>
             <h2>Key Facts</h2>
             <h2>Details</h2>
             <h2>Rooms</h2>
@@ -168,7 +167,7 @@ const Navbar = () => {
                     { Tables.map((table, index) => (
                         <tr key={ index } className='border-b dark:bg-gray-800 dark:border-gray-700'> 
                             <td className='px-4 py-4'>{table.name}</td>
-                            <td className='pl-96 py-4'>{table.value}</td>
+                            <td className='md:pl-72 py-4'>{table.value}</td>
                         </tr>
                     ))}
                 </tbody>
