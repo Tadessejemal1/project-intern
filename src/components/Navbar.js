@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-concat */
 import React from 'react';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdClose } from 'react-icons/md';
 import Rightbar from './Rightbar';
@@ -53,16 +53,22 @@ const Navbar = () => {
   return (
     <section>
       <div className='flex justify-between items-center h-24 mx-auto px-4 text-black'>
-        <div className='w-full text-3xl font-bold mr-64'>
-            <h1 className='text-2xl px-12'>Dashboard</h1> 
+        <div className='w-full text-3xl font-bold mr-60 md:mr-0'>
+            <h1 className='text-2xl pl-6'>Dashboard</h1> 
         </div>
-        <button onClick={() => setMenuVisible(!menuVisible)} className='rounded-md border-2 p-1 md:hidden'>
-            {menuVisible ? <MdClose size = {20} /> : <GiHamburgerMenu size = {20} />}
+        <button type='button'
+            onClick={() => setMenuVisible(!menuVisible)} 
+            className='top-2 right-2 z-20 rounded-md border-2 p-1 md:hidden'>
+            {menuVisible ? (
+                <MdClose className='h-4 w-4' />
+            ) : (
+                <GiHamburgerMenu className='h-4 w-4' />
+            )}
         </button>
         <div className='flex w-screen overflow-y-hidden bg-slate-100'>
             <ul className={`${
                 menuVisible ? 'flex' : 'hidden'
-              }  flex-row items-center justify-evenly overflow-hidden border-r py-4 pl-2 md:static md:flex md:w-full`}>
+              }  absolute top-0 right-0 z-10 h-screen flex-col md:flex-row items-center justify-evenly overflow-hidden bg-white md:bg-slate-100 md:h-24 border-r py-4 pl-2 md:static md:flex md:w-full`}>
                 <li className='px-2'>
                     <img src = {require('./../assets/notification' + '.png')} alt='icon is not available' className='w-6 h-6' />
                 </li>
@@ -73,7 +79,7 @@ const Navbar = () => {
                     <img src = {require('./../assets/setting-2' + '.png')} alt='icon is not available' className='w-6 h-6' />
                 </li>
                 <li className='px-4'>
-                    <img src = {require('./../assets/logout' + '.png')} alt='icon is not available'className='w-6 h-6' />
+                    <img src = {require('./../assets/logout' + '.png')} alt='icon is not available' className='w-6 h-6' />
                 </li>
                 <div className='flex flex-row gap-3 px-2'>
                     <img src = {require('./../assets/Ellipse 1' + '.png')} alt='icon is not available' />
@@ -93,13 +99,13 @@ const Navbar = () => {
             <img src = {require('./../assets/room-3' + '.webp')} alt='icon is not available' className='h-70 w-80' />
         </div>
         <div className="absolute pl-72 inset-0 flex items-center justify-between p-4">
-                <button
+                <button type='button'
                 onClick={prev}
                 className="p-1 shadow"
                 >
                 <img src = {require('./../assets/Group-2' + '.png')} alt='icon is not available' />
                 </button>
-                <button
+                <button type='button'
                 onClick={next}
                 className="p-1 shado pr-10"
                 >
@@ -110,8 +116,8 @@ const Navbar = () => {
       <div className='flex flex-col gap-3 sm:flex-col lg:flex-row md:flex-col'>
         <div className='m-4 p-2 bg-white w-54 h-full border border-white rounded'>
             <div className='flex flex-row gap-3 p-4'>
-                <button className='text-green-700 py-2 px-4 border bg-green-100 border-blue-500  rounded w-30'>For Sale</button>
-                <button className='bg-blue-500 text-white font-bold py-2 px-4 rounded-xl'>Add List</button>
+                <button type='button' className='text-green-700 py-2 px-4 border bg-green-100 border-blue-500  rounded w-30'>For Sale</button>
+                <button type='button' className='bg-blue-500 text-white font-bold py-2 px-4 rounded-xl'>Add List</button>
             </div>
             <div className=''>
                 <div className='p-4'>
@@ -153,7 +159,7 @@ const Navbar = () => {
                     
             ))}
           </div> 
-          <div className='flex flex-row gap-40 pt-8 pl-4 border-b border-gray-400 p-2'>
+          <div className='flex flex-row gap-8 md:gap-40 pt-8 pl-4 border-b border-gray-400 p-2'>
             <h2>Key Facts</h2>
             <h2>Details</h2>
             <h2>Rooms</h2>
