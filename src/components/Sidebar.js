@@ -26,7 +26,7 @@ const Sidebar = () => {
         <button
             type='button'
             onClick={() => setMenuVisible(!menuVisible)}
-            className='absolute top-2 left-2 z-20 rounded-md border-2 p-1 md:hidden'
+            className='absolute top-9 left-2 z-20 rounded-md border-2 p-1 md:hidden'
             >
             {menuVisible ? (
                 <MdClose className='h-4 w-4' />
